@@ -14,7 +14,7 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 
-def run_sma_backtest(ticker, start_date='2000-01-01', end_date='2024-01-01', short_window=50, long_window=100):
+def run_sma_backtest(ticker, start_date, end_date, short_window, long_window):
     """
     Performs a simple Simple Moving Average (SMA) crossover backtest.
 
@@ -126,16 +126,16 @@ def run_sma_backtest(ticker, start_date='2000-01-01', end_date='2024-01-01', sho
 # Change the ticker symbol here to test different stocks
 if __name__ == "__main__":
     # You can easily change the ticker symbol on the next line:
-    stock_ticker = "INFY.NS"  
+    stock_ticker = "^NSEI"  
     
     # You can also adjust dates and SMA windows if needed:
-    # start_date = '2021-01-01'
-    # end_date = '2023-12-31'
-    # short_sma = 20
-    # long_sma = 50
+    start_date = '2000-01-01'
+    end_date = '2025-03-31'
+    short_sma = 50
+    long_sma = 100
     
     # Run the backtest with the specified ticker
-    run_sma_backtest(stock_ticker)
+    run_sma_backtest(stock_ticker, start_date, end_date, short_sma, long_sma)
     
     # Example: Run with different parameters
     # run_sma_backtest("RELIANCE.NS", start_date='2022-01-01', short_window=20, long_window=50)
